@@ -3,7 +3,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            alumnos_inscripcion: [],
+            inscripcion: [],
             url: '',
             cargando: true,
             error: false,
@@ -13,12 +13,18 @@ createApp({
     methods: {
         fetchApi(){
             fetch(this.url)
-            .then()
-            .then()
-        }
+            .then(res => res.jason())
+            .then(data =>{
+                this.inscripcion = data;
+                this.cargando = false;
+            })
+        .catch(err=>{
+            console.error(err);
+            this.error = true;
+        })
     },
 
-    created(){
-
+    created()
+    this.fetchApi(this.url);
     }
 }).mount('#app')
