@@ -21,10 +21,11 @@ createApp({
         .catch(err=>{
             console.error(err);
             this.error = true;
-        })
+            })
+        }
     },
 
-    created()
+    created(){
     this.fetchApi(this.url);
     }
 }).mount('#app')

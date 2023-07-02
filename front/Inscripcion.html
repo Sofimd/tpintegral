@@ -15,46 +15,62 @@
     <main>
         <div id="app" class="container">
             <h1>Ingresantes</h1>
-            <a class="btn btn-primary">Ingresar datos</a>
+            <section v-if="error">
+                <p>Lo sentimos, no podemos mostrarte los datos solicitados en este momento</p>
+            </section>
+            <section v-else>
+                <section v-if="cargando">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="spinner-border text-primary spinner-border-sm"
+                            role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="table-responsive">
-                <table class="table table-primary">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">DNI</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Foto</th>
-                            <th scope="col">Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="v-fot = "i in inscripcion">
-                            <td scope="row">Jorge</td>
-                            <td>Perez</td>
-                            <td>60555777</td>
-                            <td>jorgeperez@gmail.com</td>
-                            <td img=""></td>
-                            <td>
-                                <a  class="btn btn-primary" href="inscripcion_editar.html">Editar</a>
-                                <button type="button" class="btn btn-primary">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr class="alumno2">
-                            <td scope="row">Rosario</td>
-                            <td>Lopez</td>
-                            <td>62334556</td>
-                            <td>rosariolopez@gmail.com</td>
-                            <td img=""></td>
-                            <td>
-                                <a  class="btn btn-primary" href="inscripcion_editar.html">Editar</a>
-                                <button type="button" class="btn btn-primary">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <section v-else>
+                        <a class="btn btn-primary">Ingresar datos</a>
+
+                        <div class="table-responsive">
+                        <table class="table table-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">DNI</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Foto</th>
+                                    <th scope="col">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr  v-for = "i in inscripcion">
+                                    <td scope="row">Jorge</td>
+                                    <td>Perez</td>
+                                    <td>60555777</td>
+                                    <td>jorgeperez@gmail.com</td>
+                                    <td img=""></td>
+                                    <td>
+                                        <a  class="btn btn-primary" href="inscripcion_editar.html">Editar</a>
+                                        <button type="button" class="btn btn-primary">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr class="alumno2">
+                                    <td scope="row">Rosario</td>
+                                    <td>Lopez</td>
+                                    <td>62334556</td>
+                                    <td>rosariolopez@gmail.com</td>
+                                    <td img=""></td>
+                                    <td>
+                                        <a  class="btn btn-primary" href="inscripcion_editar.html">Editar</a>
+                                        <button type="button" class="btn btn-primary">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </section>
+            </section>
             
         </div>
     </main>
