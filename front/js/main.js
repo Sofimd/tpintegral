@@ -9,14 +9,14 @@ document.getElementById('header').innerHTML = `<nav class="navbar navbar-expand-
   <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
           <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+              <a class="nav-link active" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
           </li>
 
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ir a</a>
               <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Inscripción</a>
-                  <a class="dropdown-item" href="#">Alumnos</a>
+                  <a class="dropdown-item" href="inscripcion_editar.html">Inscripción</a>
+                  <a class="dropdown-item" href="inscripcion.html">Alumnos</a>
               </div>
           </li>
       </ul>
