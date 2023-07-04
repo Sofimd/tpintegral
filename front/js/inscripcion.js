@@ -1,19 +1,19 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
-            inscripcion: [],
-            url: '',
-            cargando: true,
-            error: false,
-        }
-    },
+  data() {
+    return {
+      usuarios: [],
+      url: "https://mlmh3113.pythonanywhere.com/usuarios",
+      cargando: true,
+      error: false,
+    };
+  },
 
     methods: {
         fetchApi(){
             fetch(this.url)
-            .then(res => res.json())
+            .then(res => res.jason())
             .then(data =>{
                 this.inscripcion = data;
                 this.cargando = false;
@@ -25,7 +25,8 @@ createApp({
         }
     },
 
-    created(){
-    this.fetchApi(this.url);
-    }
-}).mount('#app')
+    editUser(user) {},
+  },
+
+  created() {},
+}).mount("#app");
