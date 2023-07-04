@@ -10,7 +10,7 @@ createApp({
     };
   },
 
-//HEAD
+    //HEAD
     methods: 
         fetchApi(){
             fetch(this.url)
@@ -19,11 +19,11 @@ createApp({
                 this.inscripcion = data;
                 this.cargando = false;
             })
-        .catch(err=>{
-            console.error(err);
-            this.error = true;
+            .catch(err=>{
+                console.error(err);
+                this.error = true;
             })
-        },
+        }
 
   methods: {
     fetchApi(url) {
@@ -41,9 +41,9 @@ createApp({
         });
     },
 
-    getByDni(dni) {},
+    getByDni(dni) {}
 
-    getByType(type) {},
+    getByType(type) {}
 
     delUser(dni) {
       const url = this.url + "/" + dni;
