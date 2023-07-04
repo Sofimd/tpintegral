@@ -13,7 +13,7 @@ createApp({
     methods: {
         fetchApi(){
             fetch(this.url)
-            .then(res => res.jason())
+            .then(res => res.json())
             .then(data =>{
                 this.inscripcion = data;
                 this.cargando = false;
@@ -26,7 +26,7 @@ createApp({
     },
 
     editUser(user) {},
-  },
+
 
   created() {},
 }).mount("#app");
