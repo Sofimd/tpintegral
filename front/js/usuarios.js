@@ -11,21 +11,6 @@ createApp({
   },
 
     //HEAD
-    methods: {
-        fetchApi(){
-            fetch(this.url)
-            .then(res => res.json())
-            .then(data =>{
-                this.inscripcion = data;
-                this.cargando = false;
-            })
-            .catch(err=>{
-                console.error(err);
-                this.error = true;
-            })
-    
-        },
-    },    
 
 
     methods: {
@@ -44,22 +29,7 @@ createApp({
             });
         },
 
-        eliminar(id){
-          const url = this.url + "/" + id
-          let options = {
-            method: "DELETE"
-          }
-
-          fetch(url,options)
-          .then(res => res.json())
-          .then(data =>{
-            location.reload();
-          })
-          .catch(err => console.error(err))
-
-        }
-    },    
-
+     
     getByDni(dni) {
 
     },
@@ -76,15 +46,17 @@ createApp({
       fetch(url, options)
         .then((res) => res.json())
         .then((data) => {
-          this.fetchApi(url);
+          location.reload();
         })
         .catch((err) => console.error(err));
     },
 
-    editUser(user) {},
+    
+    },    
+
 
 
   created() {
-
+    this.fetchApi(this.url)
   }
 }).mount("#app")
