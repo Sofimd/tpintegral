@@ -30,33 +30,55 @@ createApp({
         },
 
      
-    getByDni(dni) {
+        getByDni(dni) {
+
+        },
+
+        getByType(type) {
+
+        },
+
+        delUser(dni) {
+          const url = this.url + "/" + dni;
+          let options = {
+            method: "DELETE",
+          };
+          fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+              location.reload();
+            })
+            .catch((err) => console.error(err));
+          }, 
+        
+      
+        editarFormulario(nuevoDNI, nuevoNombre, nuevoApellido, nuevoEmail, nuevoTipo) {
+          if (nuevoDNI) {
+            this.dni = nuevoDNI;
+          };
+            
+          if (nuevoNombre) {
+            this.nombre = nuevoNombre;
+          };
+          if (nuevoApellido) {
+            this.apellido = nuevoApellido;
+          };
+          if (nuevoEmail) {
+            this.email = nuevoEmail;
+          };
+
+          if (nuevoTipo) {
+            this.tipo = nuevoTipo;
+          };
+          console.log(nuevoDNI, nuevoNombre, nuevoApellido, nuevoEmail, nuevoTipo)
+        }
 
     },
-
-    getByType(type) {
-
-    },
-
-    delUser(dni) {
-      const url = this.url + "/" + dni;
-      let options = {
-        method: "DELETE",
-      };
-      fetch(url, options)
-        .then((res) => res.json())
-        .then((data) => {
-          location.reload();
-        })
-        .catch((err) => console.error(err));
-    },
-
-    
-    },    
 
 
 
   created() {
     this.fetchApi(this.url)
   }
+
 }).mount("#app")
