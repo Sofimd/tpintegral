@@ -43,6 +43,21 @@ createApp({
             this.error = true;
             });
         },
+
+        eliminar(id){
+          const url = this.url + "/" + id
+          let options = {
+            method: "DELETE"
+          }
+
+          fetch(url,options)
+          .then(res => res.json())
+          .then(data =>{
+            location.reload();
+          })
+          .catch(err => console.error(err))
+
+        }
     },    
 
     getByDni(dni) {
