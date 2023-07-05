@@ -7,11 +7,11 @@ createApp({
       url: "https://mlmh3113.pythonanywhere.com/usuarios",
       cargando: true,
       error: false,
-    };
+    }
   },
 
     //HEAD
-    methods: 
+    methods: {
         fetchApi(){
             fetch(this.url)
             .then(res => res.json())
@@ -23,27 +23,35 @@ createApp({
                 console.error(err);
                 this.error = true;
             })
-        }
+    
+        },
+    },    
 
-  methods: {
-    fetchApi(url) {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          this.usuarios = data;
-          this.cargando = false;
-          const tabla = document.getElementById("tabla");
-          tabla.classList.remove("hide");
-        })
-        .catch((err) => {
-          console.error(err);
-          this.error = true;
-        });
+
+    methods: {
+        fetchApi(url) {
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+            this.usuarios = data;
+            this.cargando = false;
+            const tabla = document.getElementById("tabla");
+            tabla.classList.remove("hide");
+            })
+            .catch((err) => {
+            console.error(err);
+            this.error = true;
+            });
+        },
+    },    
+
+    getByDni(dni) {
+
     },
 
-    getByDni(dni) {}
+    getByType(type) {
 
-    getByType(type) {}
+    },
 
     delUser(dni) {
       const url = this.url + "/" + dni;
@@ -61,5 +69,7 @@ createApp({
     editUser(user) {},
 
 
-  created() {},
-}).mount("#app");
+  created() {
+
+  }
+}).mount("#app")
