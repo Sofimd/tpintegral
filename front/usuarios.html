@@ -24,7 +24,7 @@
 
         
 
-        <a class="btn btn-primary">Ingresar datos</a>
+        <a class="btn btn-primary" href="nuevo_usuario.html">Ingresar datos</a>
 
 
         <!-- <button type="button " class="btn btn-success" v-on:click="fetchApi(url)" >Mostrar todo</button> -->
@@ -61,7 +61,7 @@
                   <img :src="p.foto" :alt="p.nombre" width="80" height="80">
                 </td>
                 <td>
-                  <a class="btn btn-primary" href="inscripcion_editar.html"
+                  <a class="btn btn-primary" :href="'inscripcion_editar.html?dni='+p.dni+'&nombre='+p.nombre+'&apellido='+p.apellido+'&email='+p.email+'&categoria='+p.tipo+'&foto='+p.foto"
                     >Editar</a
                   >
                   <button type="button" class="btn btn-primary" v-on:click="delUser(p.dni)">
