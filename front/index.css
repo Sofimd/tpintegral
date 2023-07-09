@@ -6,6 +6,6 @@
     display: none;
 }
 
-.card-img-top{
-    size: 30px;
+.col{
+    size: 5rem;
 }
