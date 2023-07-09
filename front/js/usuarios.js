@@ -52,26 +52,7 @@ createApp({
           }, 
         
       
-        editarFormulario(nuevoDNI, nuevoNombre, nuevoApellido, nuevoEmail, nuevoTipo) {
-          if (nuevoDNI) {
-            this.dni = nuevoDNI;
-          };
-            
-          if (nuevoNombre) {
-            this.nombre = nuevoNombre;
-          };
-          if (nuevoApellido) {
-            this.apellido = nuevoApellido;
-          };
-          if (nuevoEmail) {
-            this.email = nuevoEmail;
-          };
-
-          if (nuevoTipo) {
-            this.tipo = nuevoTipo;
-          };
-          console.log(nuevoDNI, nuevoNombre, nuevoApellido, nuevoEmail, nuevoTipo)
-        }
+     
 
     },
 
