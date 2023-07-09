@@ -6,6 +6,38 @@
     display: none;
 }
 
-.col{
-    size: 5rem;
+#titulo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#titulo:hover{
+    color: rgb(78, 78, 241); 
+}
+
+#cards{
+    margin: 1rem;
+}
+.row-cols-1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    align-content: center;
+
+}
+
+#gato{
+    height: 380px;
+}
+
+.card-title:hover{
+    font-weight: bold;
+    color: rgb(78, 78, 241); 
+ }
+
+.card-text:hover{
+   color: rgb(78, 78, 241); 
 }
